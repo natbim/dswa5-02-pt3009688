@@ -2,7 +2,8 @@ var express = require('express');
 var home = require('../app/routes/home');
 module.exports = function(){
 	var app = express();
-	app.set('port', 8080);
+	//app.set('port', 8080);
+	app.set('port', process.env.PORT);
 	//Middleware
 	app.use(express.static('./public'));
 	app.set('view engine', 'ejs');
